@@ -9,24 +9,40 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    // 懒加载
+    lazy var centerBtn: UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 1.创建子控制器
-        addChildViewController(childVc: HomeViewController(), imageName: "tabbar_home", title: "首页")
-        addChildViewController(childVc: MessageViewController(), imageName: "tabbar_message_center", title: "消息")
-        addChildViewController(childVc: DiscoverViewController(), imageName: "tabbar_discover", title: "发现")
-        addChildViewController(childVc: ProfileViewController(), imageName: "tabbar_profile", title: "我的")
-
+        
+        setUpComposeBtn()
     }
     
-    private func addChildViewController(childVc: UIViewController, imageName:String, title:String) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        childVc.title = title
-        childVc.tabBarItem.image = UIImage(named: imageName)
-        childVc.tabBarItem.selectedImage = UIImage(named: imageName+"_highlighted")
-        let childNav = UINavigationController(rootViewController: childVc)
-        addChildViewController(childNav)
+        setUpTabBarItems()
     }
+}
 
+extension MainViewController {
+    func setUpComposeBtn() {
+        tabBar.addSubview(centerBtn)
+        centerBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
+        centerBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
+        centerBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: .normal)
+        centerBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        centerBtn.sizeToFit()
+        centerBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
+    }
+    func setUpTabBarItems() {
+        // 禁止中间的tabBarItem的交互
+        for i in 0..<tabBar.items!.count {
+            if i == 2 {
+                tabBar.items![i].isEnabled = false
+            }
+        }
+    }
+    
 }
