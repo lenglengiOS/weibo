@@ -11,12 +11,15 @@ import UIKit
 class MainViewController: UITabBarController {
     
     // 懒加载
-    lazy var centerBtn: UIButton = UIButton()
+//    lazy var centerBtn: UIButton = UIButton.createButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
+    lazy var centerBtn: UIButton = UIButton.init(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
 
+    // MARK:-系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpComposeBtn()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,13 +30,9 @@ class MainViewController: UITabBarController {
 }
 
 extension MainViewController {
+    // MARK:-设置中间的发布按钮
     func setUpComposeBtn() {
         tabBar.addSubview(centerBtn)
-        centerBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
-        centerBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
-        centerBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: .normal)
-        centerBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
-        centerBtn.sizeToFit()
         centerBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
     }
     func setUpTabBarItems() {

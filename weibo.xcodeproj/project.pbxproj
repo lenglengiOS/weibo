@@ -22,6 +22,7 @@
 		9D0AFEBA1EE15AD100D5ADFD /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEB81EE15AD100D5ADFD /* Null.storyboard */; };
 		9D0AFEBC1EE15AE700D5ADFD /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */; };
 		9D0AFEBF1EE15AF500D5ADFD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBD1EE15AF500D5ADFD /* Profile.storyboard */; };
+		9DC7C1111EE259D20070697A /* Extension-UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7C1101EE259D20070697A /* Extension-UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9D0AFEB91EE15AD100D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../../Discover.storyboard; sourceTree = "<group>"; };
 		9D0AFEBE1EE15AF500D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		9DC7C1101EE259D20070697A /* Extension-UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				9D0AFEA61EE130BB00D5ADFD /* Message(消息) */,
 				9D0AFEA31EE130BB00D5ADFD /* Discover(发现) */,
 				9D0AFEA71EE130BB00D5ADFD /* Profile(我的) */,
+				9DC7C10E1EE259B20070697A /* Tools(工具) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -195,6 +198,22 @@
 				9D0AFEB11EE133EA00D5ADFD /* ProfileViewController.swift */,
 			);
 			path = "Profile(我的)";
+			sourceTree = "<group>";
+		};
+		9DC7C10E1EE259B20070697A /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				9DC7C10F1EE259B20070697A /* Categoty */,
+			);
+			path = "Tools(工具)";
+			sourceTree = "<group>";
+		};
+		9DC7C10F1EE259B20070697A /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				9DC7C1101EE259D20070697A /* Extension-UIButton.swift */,
+			);
+			path = Categoty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0AFEB21EE133EA00D5ADFD /* ProfileViewController.swift in Sources */,
+				9DC7C1111EE259D20070697A /* Extension-UIButton.swift in Sources */,
 				9D0AFE751EE1175000D5ADFD /* AppDelegate.swift in Sources */,
 				9D0AFEAA1EE1324500D5ADFD /* MainViewController.swift in Sources */,
 				9D0AFEAE1EE133CE00D5ADFD /* MessageViewController.swift in Sources */,
