@@ -22,7 +22,15 @@
 		9D0AFEBA1EE15AD100D5ADFD /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEB81EE15AD100D5ADFD /* Null.storyboard */; };
 		9D0AFEBC1EE15AE700D5ADFD /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */; };
 		9D0AFEBF1EE15AF500D5ADFD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBD1EE15AF500D5ADFD /* Profile.storyboard */; };
-		9DC7C1111EE259D20070697A /* Extension-UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7C1101EE259D20070697A /* Extension-UIButton.swift */; };
+		9DC7C1111EE259D20070697A /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7C1101EE259D20070697A /* UIButton-Extension.swift */; };
+		9DD7B0601EE4EE6E00D88E65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B05F1EE4EE6E00D88E65 /* BaseViewController.swift */; };
+		9DD7B0621EE4F1FE00D88E65 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B0611EE4F1FE00D88E65 /* VisitorView.swift */; };
+		9DD7B0641EE4F20E00D88E65 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD7B0631EE4F20E00D88E65 /* VisitorView.xib */; };
+		9DD7B0661EE5336E00D88E65 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B0651EE5336E00D88E65 /* UIBarButtonItem-Extension.swift */; };
+		9DD7B0681EE538FC00D88E65 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B0671EE538FC00D88E65 /* TitleButton.swift */; };
+		9DD7B06C1EE5493900D88E65 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B06A1EE5493900D88E65 /* PopoverViewController.swift */; };
+		9DD7B06D1EE5493900D88E65 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD7B06B1EE5493900D88E65 /* PopoverViewController.xib */; };
+		9DD7B06F1EE55E3300D88E65 /* LHLPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B06E1EE55E3300D88E65 /* LHLPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +72,15 @@
 		9D0AFEB91EE15AD100D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../../Discover.storyboard; sourceTree = "<group>"; };
 		9D0AFEBE1EE15AF500D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
-		9DC7C1101EE259D20070697A /* Extension-UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UIButton.swift"; sourceTree = "<group>"; };
+		9DC7C1101EE259D20070697A /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		9DD7B05F1EE4EE6E00D88E65 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9DD7B0611EE4F1FE00D88E65 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		9DD7B0631EE4F20E00D88E65 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		9DD7B0651EE5336E00D88E65 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		9DD7B0671EE538FC00D88E65 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		9DD7B06A1EE5493900D88E65 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		9DD7B06B1EE5493900D88E65 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		9DD7B06E1EE55E3300D88E65 /* LHLPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHLPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +183,7 @@
 		9D0AFEA41EE130BB00D5ADFD /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				9DD7B0691EE5492200D88E65 /* UIPopover */,
 				9D0AFEB31EE15AA500D5ADFD /* Home.storyboard */,
 				9D0AFEAB1EE133C200D5ADFD /* HomeViewController.swift */,
 			);
@@ -176,6 +193,7 @@
 		9D0AFEA51EE130BB00D5ADFD /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				9DD7B05E1EE4EE5B00D88E65 /* Visitor */,
 				9D0AFEB81EE15AD100D5ADFD /* Null.storyboard */,
 				9D0AFEA91EE1324500D5ADFD /* MainViewController.swift */,
 			);
@@ -204,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				9DC7C10F1EE259B20070697A /* Categoty */,
+				9DD7B0671EE538FC00D88E65 /* TitleButton.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -211,9 +230,30 @@
 		9DC7C10F1EE259B20070697A /* Categoty */ = {
 			isa = PBXGroup;
 			children = (
-				9DC7C1101EE259D20070697A /* Extension-UIButton.swift */,
+				9DC7C1101EE259D20070697A /* UIButton-Extension.swift */,
+				9DD7B0651EE5336E00D88E65 /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Categoty;
+			sourceTree = "<group>";
+		};
+		9DD7B05E1EE4EE5B00D88E65 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				9DD7B05F1EE4EE6E00D88E65 /* BaseViewController.swift */,
+				9DD7B0611EE4F1FE00D88E65 /* VisitorView.swift */,
+				9DD7B0631EE4F20E00D88E65 /* VisitorView.xib */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
+		9DD7B0691EE5492200D88E65 /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				9DD7B06A1EE5493900D88E65 /* PopoverViewController.swift */,
+				9DD7B06B1EE5493900D88E65 /* PopoverViewController.xib */,
+				9DD7B06E1EE55E3300D88E65 /* LHLPresentationController.swift */,
+			);
+			path = UIPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +365,9 @@
 			files = (
 				9D0AFEB51EE15AA500D5ADFD /* Home.storyboard in Resources */,
 				9D0AFE7C1EE1175000D5ADFD /* Assets.xcassets in Resources */,
+				9DD7B06D1EE5493900D88E65 /* PopoverViewController.xib in Resources */,
 				9D0AFEBA1EE15AD100D5ADFD /* Null.storyboard in Resources */,
+				9DD7B0641EE4F20E00D88E65 /* VisitorView.xib in Resources */,
 				9D0AFEB71EE15ABA00D5ADFD /* Message.storyboard in Resources */,
 				9D0AFE7A1EE1175000D5ADFD /* Main.storyboard in Resources */,
 				9D0AFEBF1EE15AF500D5ADFD /* Profile.storyboard in Resources */,
@@ -354,11 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD7B06F1EE55E3300D88E65 /* LHLPresentationController.swift in Sources */,
 				9D0AFEB21EE133EA00D5ADFD /* ProfileViewController.swift in Sources */,
-				9DC7C1111EE259D20070697A /* Extension-UIButton.swift in Sources */,
+				9DC7C1111EE259D20070697A /* UIButton-Extension.swift in Sources */,
 				9D0AFE751EE1175000D5ADFD /* AppDelegate.swift in Sources */,
 				9D0AFEAA1EE1324500D5ADFD /* MainViewController.swift in Sources */,
+				9DD7B06C1EE5493900D88E65 /* PopoverViewController.swift in Sources */,
+				9DD7B0681EE538FC00D88E65 /* TitleButton.swift in Sources */,
 				9D0AFEAE1EE133CE00D5ADFD /* MessageViewController.swift in Sources */,
+				9DD7B0601EE4EE6E00D88E65 /* BaseViewController.swift in Sources */,
+				9DD7B0661EE5336E00D88E65 /* UIBarButtonItem-Extension.swift in Sources */,
+				9DD7B0621EE4F1FE00D88E65 /* VisitorView.swift in Sources */,
 				9D0AFEAC1EE133C200D5ADFD /* HomeViewController.swift in Sources */,
 				9D0AFEB01EE133DD00D5ADFD /* DiscoverViewController.swift in Sources */,
 			);

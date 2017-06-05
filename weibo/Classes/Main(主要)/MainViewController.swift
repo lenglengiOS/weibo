@@ -29,11 +29,13 @@ class MainViewController: UITabBarController {
     }
 }
 
+// MARK:-设置UI界面
 extension MainViewController {
-    // MARK:-设置中间的发布按钮
+    /// 设置中间的发布按钮
     func setUpComposeBtn() {
         tabBar.addSubview(centerBtn)
         centerBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
+        centerBtn.addTarget(self, action: #selector(composeBtnClick(sender:)), for: .touchUpInside)
     }
     func setUpTabBarItems() {
         // 禁止中间的tabBarItem的交互
@@ -45,3 +47,50 @@ extension MainViewController {
     }
     
 }
+
+// MARK:-时间监听
+extension MainViewController {
+    func composeBtnClick(sender: UIButton) {
+        print("composeBtnClick:\(sender)")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

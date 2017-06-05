@@ -8,84 +8,94 @@
 
 import UIKit
 
-class HomeViewController: UITableViewController {
-
+class HomeViewController: BaseViewController {
+    //MARK:-懒加载属性
+    lazy var titleView : TitleButton = TitleButton()
+    
+    
+    //MARK:-系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.red
+        
+        // 1.没有登录时设置的内容
+        visitorView.addRotationAnmi()
+        if !isLogin {
+            return
+        }
+        
+        // 2.设置登录时的内容
+        setUpNavigationBar()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+//MARK:-设置UI界面
+extension HomeViewController {
+    func setUpNavigationBar() {
+        // 1.设置左侧的item
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
+        // 2.设置右侧的item
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
+        // 3.设置titleView
+        titleView.setTitle("洪冷冷", for: .normal)
+        titleView.addTarget(self, action: #selector(titleViewBtnClick(sender:)), for: .touchUpInside)
+        navigationItem.titleView = titleView
+        
+        
+    }
+}
+
+//MARK:-时间监听的函数
+extension HomeViewController {
+    func titleViewBtnClick(sender: UIButton) {
+        // 1.改变按钮的状态
+        sender.isSelected = !sender.isSelected
+        // 2.创建弹出的控制器
+        let popoverVC = PopoverViewController()
+        popoverVC.modalPresentationStyle = .custom
+        // 3.设置转场代理
+        popoverVC.transitioningDelegate = self
+        // 3.modal出popover控制器
+        present(popoverVC, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return LHLPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
