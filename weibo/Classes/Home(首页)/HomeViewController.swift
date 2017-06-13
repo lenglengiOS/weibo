@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopoverSwift
 
 class HomeViewController: BaseViewController {
     //MARK:-懒加载属性
@@ -32,6 +33,7 @@ class HomeViewController: BaseViewController {
 //MARK:-设置UI界面
 extension HomeViewController {
     func setUpNavigationBar() {
+        view.backgroundColor = UIColor.purple
         // 1.设置左侧的item
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
         // 2.设置右侧的item
@@ -50,19 +52,19 @@ extension HomeViewController {
     func titleViewBtnClick(sender: UIButton) {
         // 1.改变按钮的状态
         sender.isSelected = !sender.isSelected
-        // 2.创建弹出的控制器
-        let popoverVC = PopoverViewController()
-        popoverVC.modalPresentationStyle = .custom
-        // 3.设置转场代理
-        popoverVC.transitioningDelegate = self
-        // 3.modal出popover控制器
-        present(popoverVC, animated: true, completion: nil)
-    }
-}
+        
 
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return LHLPresentationController(presentedViewController: presented, presenting: presenting)
+        // In view controller
+        let image = UIImage(named: "collection_hightlight")
+        let item0 = PopoverItem(title: "发起群聊", image: image) { debugPrint($0.title) }
+        let item1 = PopoverItem(title: "添加胖友", image: image) { debugPrint($0.title) }
+        let item2 = PopoverItem(title: "扫一扫", image: image) { debugPrint($0.title) }
+        let item3 = PopoverItem(title: "收付款", image: image) { debugPrint($0.title) }
+        let items = [item0, item1, item2, item3]
+        
+        let controller = PopoverController(items: items, fromView: view, direction: .down, reverseHorizontalCoordinates: true, style: .normal)
+        popover(controller)
+      
     }
 }
 
