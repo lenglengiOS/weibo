@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UITableViewController {
     
     lazy var visitorView : VisitorView = VisitorView.VisitorView()
-    let isLogin: Bool = true
+    let isLogin: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,10 @@ extension BaseViewController {
     
     /// 登录
     func loginBtnClick(){
-        print(888)
+        // 弹出授权界面
+        let oauthVC = OAuthViewController()
+        let oauthNav = UINavigationController(rootViewController: oauthVC)
+        present(oauthNav, animated: true, completion: nil)
     }
 }
 

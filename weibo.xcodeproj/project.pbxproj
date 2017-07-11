@@ -23,6 +23,9 @@
 		9D0AFEBA1EE15AD100D5ADFD /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEB81EE15AD100D5ADFD /* Null.storyboard */; };
 		9D0AFEBC1EE15AE700D5ADFD /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */; };
 		9D0AFEBF1EE15AF500D5ADFD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0AFEBD1EE15AF500D5ADFD /* Profile.storyboard */; };
+		9D8ADE791EFCE94D006CC13E /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ADE771EFCE94D006CC13E /* OAuthViewController.swift */; };
+		9D8ADE7A1EFCE94D006CC13E /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8ADE781EFCE94D006CC13E /* OAuthViewController.xib */; };
+		9D8ADE7C1EFD00EB006CC13E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ADE7B1EFD00EB006CC13E /* Common.swift */; };
 		9DC7C1111EE259D20070697A /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7C1101EE259D20070697A /* UIButton-Extension.swift */; };
 		9DD7B0601EE4EE6E00D88E65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B05F1EE4EE6E00D88E65 /* BaseViewController.swift */; };
 		9DD7B0621EE4F1FE00D88E65 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7B0611EE4F1FE00D88E65 /* VisitorView.swift */; };
@@ -78,6 +81,9 @@
 		9D0AFEB91EE15AD100D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		9D0AFEBB1EE15AE700D5ADFD /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../../Discover.storyboard; sourceTree = "<group>"; };
 		9D0AFEBE1EE15AF500D5ADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		9D8ADE771EFCE94D006CC13E /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		9D8ADE781EFCE94D006CC13E /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		9D8ADE7B1EFD00EB006CC13E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9DC7C1101EE259D20070697A /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		9DD7B05F1EE4EE6E00D88E65 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DD7B0611EE4F1FE00D88E65 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 		9D0AFEA51EE130BB00D5ADFD /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				9D8ADE761EFCE905006CC13E /* OAuth */,
 				9DD7B05E1EE4EE5B00D88E65 /* Visitor */,
 				9D0AFEB81EE15AD100D5ADFD /* Null.storyboard */,
 				9D0AFEA91EE1324500D5ADFD /* MainViewController.swift */,
@@ -251,11 +258,21 @@
 			path = "Profile(我的)";
 			sourceTree = "<group>";
 		};
+		9D8ADE761EFCE905006CC13E /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9D8ADE781EFCE94D006CC13E /* OAuthViewController.xib */,
+				9D8ADE771EFCE94D006CC13E /* OAuthViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		9DC7C10E1EE259B20070697A /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
 				9DC7C10F1EE259B20070697A /* Categoty */,
 				9DD7B0671EE538FC00D88E65 /* TitleButton.swift */,
+				9D8ADE7B1EFD00EB006CC13E /* Common.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -396,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0AFEB51EE15AA500D5ADFD /* Home.storyboard in Resources */,
+				9D8ADE7A1EFCE94D006CC13E /* OAuthViewController.xib in Resources */,
 				9D0AFE7C1EE1175000D5ADFD /* Assets.xcassets in Resources */,
 				9D0AFEBA1EE15AD100D5ADFD /* Null.storyboard in Resources */,
 				9DD7B0641EE4F20E00D88E65 /* VisitorView.xib in Resources */,
@@ -567,8 +585,10 @@
 			files = (
 				9D0AFEB21EE133EA00D5ADFD /* ProfileViewController.swift in Sources */,
 				9DC7C1111EE259D20070697A /* UIButton-Extension.swift in Sources */,
+				9D8ADE7C1EFD00EB006CC13E /* Common.swift in Sources */,
 				9D0AFE751EE1175000D5ADFD /* AppDelegate.swift in Sources */,
 				9D0AFEAA1EE1324500D5ADFD /* MainViewController.swift in Sources */,
+				9D8ADE791EFCE94D006CC13E /* OAuthViewController.swift in Sources */,
 				9DD7B0681EE538FC00D88E65 /* TitleButton.swift in Sources */,
 				9D0AFEAE1EE133CE00D5ADFD /* MessageViewController.swift in Sources */,
 				9DD7B0601EE4EE6E00D88E65 /* BaseViewController.swift in Sources */,
