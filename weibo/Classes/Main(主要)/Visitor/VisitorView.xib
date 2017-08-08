@@ -87,7 +87,7 @@
                 <outlet property="rotationView" destination="pN3-65-mT9" id="Y8I-Xr-4qu"/>
                 <outlet property="tipLabel" destination="yjs-XJ-8RH" id="qaI-C9-edp"/>
             </connections>
-            <point key="canvasLocation" x="492" y="94"/>
+            <point key="canvasLocation" x="-26" y="14"/>
         </view>
     </objects>
     <resources>

@@ -18,8 +18,10 @@ class OAuthViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // 设置导航栏内容
         setUpNavigationBar()
         
+        // 加载网页
         setUpLoadPage()
         
         SVProgressHUD.show(withStatus: "加载中...")
@@ -33,7 +35,6 @@ extension OAuthViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(closeOAuthPage))
         navigationItem.title = "登录授权"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "填充", style: .plain, target: self, action: #selector(fillRightItem))
-        
     }
     
     func setUpLoadPage() {
@@ -60,13 +61,17 @@ extension OAuthViewController {
 
 // MARK:- webView的代理方法
 extension OAuthViewController : UIWebViewDelegate {
-    
+    // 加载网页完成
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SVProgressHUD.dismiss()
     }
+    
+    // 加载网页失败
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         SVProgressHUD.showError(withStatus: "加载失败！")
     }
+    
+    // 页面准备加载网页
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         // 获取code
         guard let url = request.url else {
@@ -83,9 +88,24 @@ extension OAuthViewController : UIWebViewDelegate {
         }
         let code = firstCode.components(separatedBy: "&from=").first!
         
-        print("获取的code: "+code)
+        print("获取的code: \(code)")
+        // 请求accessToken
+        loadAccessToken(code: code)
         
         return true
+    }
+}
+
+// MARK-:- 请求数据
+extension OAuthViewController {
+    func loadAccessToken(code : String) {
+        NetWorkTools.shareInstance.loadAccessToken(code: code) { (result, error) -> () in
+            if error != nil {
+                print("------error------\(error!)")
+                return
+            }
+            print("------result------\(result!)")
+        }
     }
 }
 
